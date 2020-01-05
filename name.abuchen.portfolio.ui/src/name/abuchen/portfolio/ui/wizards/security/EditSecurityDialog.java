@@ -197,6 +197,7 @@ public class EditSecurityDialog extends Dialog
         });
 
         addPage(new SecurityMasterDataPage(model, bindings), Images.SECURITY.image());
+        addPage(new PayoutPage(model, bindings), null);
         addPage(new AttributesPage(model, bindings), null);
         addPage(new SecurityTaxonomyPage(model, bindings), null);
         addPage(new HistoricalQuoteProviderPage(model, bindings), null);
