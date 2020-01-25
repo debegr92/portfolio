@@ -55,7 +55,7 @@ public final class Security implements Attributable, InvestmentVehicle
     private String calendar;
     
     // Dividend and other payout data
-    private long annualPayoutAmount;
+    private SecurityPayout payout;
 
     // feed and feedURL are used to update historical prices
     private String feed;
@@ -234,14 +234,14 @@ public final class Security implements Attributable, InvestmentVehicle
         this.calendar = calendar;
     }
     
-    public long getAnnualPayoutAmount()
+    public SecurityPayout getPayout()
     {
-        return annualPayoutAmount;
+        return payout;
     }
-    
-    public void setAnnualPayoutAmount(long annualPayoutAmount)
+
+    public void setPayout(SecurityPayout payout)
     {
-        this.annualPayoutAmount = annualPayoutAmount;
+        this.payout = payout;
     }
 
     /**
@@ -650,7 +650,7 @@ public final class Security implements Attributable, InvestmentVehicle
         answer.wkn = wkn;
         answer.calendar = calendar;
         
-        answer.annualPayoutAmount = annualPayoutAmount;
+        answer.payout = payout;
 
         answer.feed = feed;
         answer.feedURL = feedURL;

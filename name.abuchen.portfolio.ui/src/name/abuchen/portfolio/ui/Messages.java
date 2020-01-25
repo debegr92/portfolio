@@ -767,6 +767,7 @@ public class Messages extends NLS
     public static String MsgDeletionNotPossibleDetail;
     public static String MsgDialogInputRequired;
     public static String MsgDialogNotAValidISIN;
+    public static String MsgDialogNotAValidNumber;
     public static String MsgEmbeddedBrowserError;
     public static String MsgErrorConvertedAmount;
     public static String MsgErrorConvertToBuySellCurrencyMismatch;

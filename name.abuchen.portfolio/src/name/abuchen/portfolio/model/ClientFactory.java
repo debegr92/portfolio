@@ -576,6 +576,8 @@ public class ClientFactory
                 // added data map to classification and assignemnt
             case 43:
                 // added LimitPrice as attribute type
+            case 44:
+                // added SecurityPayout class
                 
                 client.setVersion(Client.CURRENT_VERSION);
                 break;
@@ -1098,6 +1100,8 @@ public class ClientFactory
             xstream.aliasField("t", SecurityPrice.class, "date");
             xstream.useAttributeFor(SecurityPrice.class, "value");
             xstream.aliasField("v", SecurityPrice.class, "value");
+            
+            xstream.alias("securityPayout", SecurityPayout.class);
 
             xstream.alias("limitPrice", LimitPrice.class);
             

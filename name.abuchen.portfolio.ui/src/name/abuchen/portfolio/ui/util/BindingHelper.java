@@ -504,6 +504,24 @@ public class BindingHelper
                         null);
         return txtValue;
     }
+    
+    public final Text bindQuoteInput(Composite editArea, final String label, String property)
+    {
+        Text txtValue = createTextInput(editArea, label, SWT.NONE, 12);
+        
+        @SuppressWarnings("unchecked")
+        IObservableValue<String> targetObservable = WidgetProperties.text(SWT.Modify).observe(txtValue);
+        @SuppressWarnings("unchecked")
+        IObservableValue<String> modelObservable = BeanProperties.value(property).observe(model);
+        
+        context.bindValue(targetObservable, modelObservable, //
+                        new UpdateValueStrategy<String, String>().setAfterConvertValidator(
+                                        v -> v == null || v.trim().length() == 0 ? ValidationStatus.ok()
+                                                        : ValidationStatus.error(MessageFormat.format(
+                                                                        Messages.MsgDialogNotAValidNumber, label))),
+                        null);
+        return txtValue;
+    }
 
     public final Control bindBooleanInput(Composite editArea, final String label, String property)
     {
